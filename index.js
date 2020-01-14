@@ -11,7 +11,7 @@ if (!branchName) {
     let str = '';
     try {
         str = execSync('git branch -a', {encoding: 'utf8'});
-        if(str.includes(branchName)) {
+        if(str.includes('_' + branchName + '_')) {
             console.log('已存在同名分支，请删除相应分支或重新定义版本号')
         } else {
             execSync('git checkout origin/master', {encoding: 'utf8'});
